@@ -19,3 +19,15 @@ class Order:
         self.__customer = customer
         self.__coffee = coffee
         self.__price = price
+
+        @property
+        def customer(self):
+            return self.__customer
+
+        @property
+        def coffee(self):
+            return self.__coffee
+
+        @property
+        def price(self):
+            return self.__price
