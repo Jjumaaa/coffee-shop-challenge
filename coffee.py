@@ -12,3 +12,18 @@ class Coffee:
     @property
     def name(self):
         return self.__name
+
+    def orders(self):
+        return list(self.__orders)
+
+    def num_orders(self):
+        return len(self.__orders)
+
+    def average_price(self):
+        count = self.num_orders()
+        if count == 0:
+            return 0
+        total = 0
+        for order in self.__orders:
+            total += order.price
+        return total / count
