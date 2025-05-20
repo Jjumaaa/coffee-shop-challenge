@@ -31,3 +31,9 @@ class Order:
         @property
         def price(self):
             return self.__price
+                 
+        if hasattr(customer, "_log_order"):
+            customer._log_order(self)
+
+        if hasattr(coffee, "_log_order"):
+            coffee._log_order(self)
