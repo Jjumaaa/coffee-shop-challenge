@@ -26,4 +26,18 @@ class Coffee:
         total = 0
         for order in self.__orders:
             total += order.price
-        return total / count
+            return total / count
+    
+        def customers(self):
+            collected = []
+            identifiers = set()
+            for o in self.__orders:
+                cust = o.customer
+                if cust not in identifiers:
+                    collected.append(cust)
+                    identifiers.add(cust)
+            return collected
+
+    def _log_order(self, order):
+        if hasattr(order, "price") and hasattr(order, "customer"):
+            self.__orders.append(order)
