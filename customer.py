@@ -31,3 +31,11 @@ class Customer:
                     seen.add(order.coffee)
                     unique.append(order.coffee)
             return unique
+        
+        def create_order(self, coffee, price):
+            from order import Order
+            return Order(self, coffee, price)
+
+        def _log_order(self, order):
+            if hasattr(order, "coffee") and hasattr(order, "price"):
+                self.__orders.append(order)
